@@ -1,4 +1,4 @@
-package com.example.liquorstore;
+package com.example.liquorstore.model;
 
 import javax.persistence.*;
 

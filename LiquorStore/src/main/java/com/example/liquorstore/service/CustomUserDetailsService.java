@@ -1,5 +1,8 @@
-package com.example.liquorstore;
+package com.example.liquorstore.service;
 
+import com.example.liquorstore.details.CustomUserDetails;
+import com.example.liquorstore.repository.UserRepository;
+import com.example.liquorstore.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
