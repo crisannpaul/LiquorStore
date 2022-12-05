@@ -8,7 +8,6 @@ public class LiquorStoreApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LiquorStoreApplication.class, args);
 		//test2 test
-
 	}
 
 }
