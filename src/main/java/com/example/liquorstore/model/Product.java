@@ -16,8 +16,6 @@ import java.sql.Blob;
 @NoArgsConstructor
 public class Product {
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "ID_PRODUCT")

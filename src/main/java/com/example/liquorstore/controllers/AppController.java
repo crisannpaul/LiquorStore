@@ -52,10 +52,18 @@ public class AppController {
     }
 
     @GetMapping("/home_page")
-    public String aboutUS(Model model) {
+    public String homePage(Model model) {
         List<Product> listProducts = productRepo.findAll();
         model.addAttribute("listProducts", listProducts);
 
         return "home_page";
+    }
+    @GetMapping("/about_us")
+    public String aboutUs(Model mode) {
+        return "users";
+    }
+    @GetMapping("/shopping_cart")
+    public String shoppingCart(Model mode) {
+        return "users";
     }
 }
