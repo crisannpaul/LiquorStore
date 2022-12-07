@@ -1,12 +1,20 @@
 package com.example.liquorstore.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     @Id
+    @Column (name = "ID_USER")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
@@ -25,9 +33,9 @@ public class User {
     @Column(nullable = false, length = 10)
     private String role = "CLIENT";
 
-    public int getId() {
-        return id;
-    }
+    //public int getId() {
+    //    return id;
+    //}
     public void setId(int id) {
         this.id = id;
     }

@@ -1,6 +1,8 @@
 package com.example.liquorstore.controllers;
 
+import com.example.liquorstore.model.Product;
 import com.example.liquorstore.model.User;
+import com.example.liquorstore.repository.ProductRepository;
 import com.example.liquorstore.repository.UserRepository;
 import com.example.liquorstore.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,8 @@ public class AppController {
 
     @Autowired
     private UserRepository userRepo;
+    @Autowired
+    private ProductRepository productRepo;
 
     @GetMapping("")
     public String viewHomePage() {
@@ -45,5 +49,13 @@ public class AppController {
         model.addAttribute("listUsers", listUsers);
 
         return "users";
+    }
+
+    @GetMapping("/home_page")
+    public String aboutUS(Model model) {
+        List<Product> listProducts = productRepo.findAll();
+        model.addAttribute("listProducts", listProducts);
+
+        return "home_page";
     }
 }
