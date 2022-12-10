@@ -10,7 +10,9 @@ import com.example.liquorstore.form.ProductForm;
 import com.example.liquorstore.model.OrderDetailInfo;
 import com.example.liquorstore.model.OrderInfo;
 import com.example.liquorstore.pagination.PaginationResult;
+import com.example.liquorstore.validator.AccountFormValidator;
 import com.example.liquorstore.validator.ProductFormValidator;
+import com.example.liquorstore.validator.password.PasswordMatch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -45,6 +47,9 @@ public class AdminController {
     @Autowired
     private ProductFormValidator productFormValidator;
 
+    @Autowired
+    private AccountFormValidator accountFormValidator;
+
     @InitBinder
     public void myInitBinder(WebDataBinder dataBinder) {
         Object target = dataBinder.getTarget();
@@ -55,6 +60,9 @@ public class AdminController {
 
         if (target.getClass() == ProductForm.class) {
             dataBinder.setValidator(productFormValidator);
+        }
+        if (target.getClass() == AccountForm.class) {
+            dataBinder.setValidator(accountFormValidator);
         }
     }
 
@@ -73,7 +81,7 @@ public class AdminController {
 
     @RequestMapping(value = { "/admin/register" }, method = RequestMethod.POST)
     public String registerCustomer(Model model, //
-                                   @ModelAttribute("accountForm") AccountForm newAccount) {
+                                   @ModelAttribute("accountForm") @Validated AccountForm newAccount) {
 
         accountDAO.save(newAccount);
 

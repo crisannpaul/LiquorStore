@@ -9,7 +9,6 @@ import javax.persistence.*;
 import com.example.liquorstore.entity.Product;
 import com.example.liquorstore.form.ProductForm;
 import com.example.liquorstore.model.ProductInfo;
-import com.example.liquorstore.pagination.PaginationResult;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

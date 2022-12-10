@@ -6,18 +6,21 @@ public class AccountInfo {
 
     private String userName;
 
-    private String encryptedPassword;
+    private String password;
+
+    private String repeatPassword;
 
     public AccountInfo(){}
 
     public AccountInfo(Account account) {
         this.userName = account.getUserName();
-        this.encryptedPassword = account.getEncrytedPassword();
+        this.password = account.getEncrytedPassword();
     }
 
-    public AccountInfo(String userName, String encryptedPassword) {
+    public AccountInfo(String userName, String password, String repeatPassword) {
         this.userName = userName;
-        this.encryptedPassword = encryptedPassword;
+        this.password = password;
+        this.repeatPassword = repeatPassword;
     }
 
     public String getUserName() {
@@ -28,11 +31,19 @@ public class AccountInfo {
         this.userName = userName;
     }
 
-    public String getEncryptedPassword() {
-        return encryptedPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setEncryptedPassword(String encryptedPassword) {
-        this.encryptedPassword = encryptedPassword;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRepeatPassword() {
+        return repeatPassword;
+    }
+
+    public void setRepeatPassword(String repeatPassword) {
+        this.repeatPassword = repeatPassword;
     }
 }

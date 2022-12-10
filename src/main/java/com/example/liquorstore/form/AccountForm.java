@@ -1,19 +1,23 @@
 package com.example.liquorstore.form;
 
 import com.example.liquorstore.model.AccountInfo;
+import com.example.liquorstore.validator.password.PasswordMatch;
 
 public class AccountForm {
 
     private String userName;
 
-    private String encryptedPassword;
+    private String password;
+
+    private String repeatPassword;
 
     public AccountForm() {}
 
     public AccountForm(AccountInfo accountInfo) {
         if(accountInfo != null) {
             this.userName = accountInfo.getUserName();
-            this.encryptedPassword = accountInfo.getEncryptedPassword();
+            this.password = accountInfo.getPassword();
+            this.repeatPassword = accountInfo.getRepeatPassword();
         }
     }
 
@@ -25,11 +29,19 @@ public class AccountForm {
         this.userName = userName;
     }
 
-    public String getEncryptedPassword() {
-        return encryptedPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setEncryptedPassword(String encryptedPassword) {
-        this.encryptedPassword = encryptedPassword;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRepeatPassword() {
+        return repeatPassword;
+    }
+
+    public void setRepeatPassword(String repeatPassword) {
+        this.repeatPassword = repeatPassword;
     }
 }
