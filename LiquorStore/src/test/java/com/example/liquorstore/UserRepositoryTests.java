@@ -2,7 +2,6 @@ package com.example.liquorstore;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.example.liquorstore.model.User;
 import com.example.liquorstore.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

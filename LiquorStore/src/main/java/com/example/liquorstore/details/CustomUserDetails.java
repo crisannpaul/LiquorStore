@@ -2,7 +2,6 @@ package com.example.liquorstore.details;
 
 import java.util.Collection;
 
-import com.example.liquorstore.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

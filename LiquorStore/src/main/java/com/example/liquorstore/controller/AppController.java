@@ -1,6 +1,5 @@
 package com.example.liquorstore.controller;
 
-import com.example.liquorstore.model.User;
 import com.example.liquorstore.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
