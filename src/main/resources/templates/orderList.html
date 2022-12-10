@@ -10,7 +10,7 @@
 <th:block th:include="/_menu"></th:block>
 
 <div class="page-title">Order List</div>
-<div>Total Order Count: <span th:utext="${paginationResult.size()}"></span></div>
+<div>Total Order Count: <span th:utext="${orderList.size()}"></span></div>
 <table border="1" style="width:100%">
   <tr>
     <th>Order Num</th>
@@ -21,7 +21,7 @@
     <th>Amount</th>
     <th>View</th>
   </tr>
-  <tr th:each="orderInfo : ${paginationResult}">
+  <tr th:each="orderInfo : ${orderList}">
     <td th:utext="${orderInfo.orderNum}"></td>
     <td th:utext="${#dates.format(orderInfo.orderDate,'dd-MM-yyyy HH:mm')}"></td>
     <td th:utext="${orderInfo.customerName}"></td>

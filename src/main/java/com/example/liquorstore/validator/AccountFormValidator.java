@@ -34,7 +34,7 @@ public class AccountFormValidator implements Validator {
             errors.rejectValue("password", "Password too short");
         }
 
-        if(password.equals(repeatPassword)) {
+        if(!password.equals(repeatPassword)) {
             errors.rejectValue("password", "Passwords don't match");
         }
 

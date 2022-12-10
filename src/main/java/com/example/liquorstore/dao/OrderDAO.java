@@ -81,7 +81,7 @@ public class OrderDAO {
     }
 
     // @page = 1, 2, ...
-    public List<OrderInfo> listOrderInfo(int page, int maxResult, int maxNavigationPage) {
+    public List<OrderInfo> listOrderInfo() {
         String sql = "Select new " + OrderInfo.class.getName()//
                 + "(ord.id, ord.orderDate, ord.orderNum, ord.amount, "
                 + " ord.customerName, ord.customerAddress, ord.customerEmail, ord.customerPhone) " + " from "

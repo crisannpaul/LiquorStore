@@ -28,16 +28,12 @@ import java.util.List;
 @Controller
 @Transactional
 public class AppController {
-
     @Autowired
     private OrderDAO orderDAO;
-
     @Autowired
     private ProductDAO productDAO;
-
     @Autowired
     private CustomerFormValidator customerFormValidator;
-
     @InitBinder
     public void myInitBinder(WebDataBinder dataBinder) {
         Object target = dataBinder.getTarget();
